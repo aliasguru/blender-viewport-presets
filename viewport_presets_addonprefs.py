@@ -93,37 +93,6 @@ def register():
 
     prefs = bpy.context.preferences.addons[__package__].preferences
     prefs.selected_index = -1
-    # one = prefs.presets.add()
-    # one.name = "First"
-    # one.show_gizmo = True
-    # one.show_overlays = False
-    # two = prefs.presets.add()
-    # two.name = "Second"
-    # two.show_gizmo = False
-    # two.show_overlays = True
-
-    # two.show_ortho_grid = False
-    # two.show_floor = True
-    # two.show_axis_x = False
-    # two.show_axis_y = False
-    # two.show_axis_z = False
-    # two.grid_scale = 0.5
-    # two.grid_subdivisions = 30
-    # two.show_text = False
-    # two.show_cursor = True
-    # two.show_annotation = False
-    # two.show_extras = False
-    # two.show_relationship_lines = True
-    # two.show_outline_selected = False
-    # two.show_bones = True
-    # two.show_motion_paths = True
-    # two.show_object_origins = True
-    # two.show_object_origins_all = False
-    # two.show_wireframes = True
-    # two.wireframe_threshold = 0.33
-    # two.show_face_orientation = True
-    # two.show_reconstruction = True
-
 
 def unregister():
     bpy.utils.unregister_class(ViewportPresetsAddonPreferences)
