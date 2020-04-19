@@ -5,7 +5,8 @@ from bpy.props import EnumProperty
 from bpy.props import CollectionProperty
 from bpy.props import PointerProperty
 
-class ViewportPreset(bpy.types.PropertyGroup):
+
+class ViewportPresetsOperator():
     name: bpy.props.StringProperty(name="Preset name", default="Unknown")
     show_gizmo: bpy.props.BoolProperty(name="Show gizmo", default=True)
     show_gizmo_navigate : bpy.props.BoolProperty(default=True)
@@ -74,6 +75,9 @@ class ViewportPreset(bpy.types.PropertyGroup):
     studiolight_background_alpha: bpy.props.FloatProperty()
     use_world_space_lighting: bpy.props.BoolProperty(default=True)
     single_color: bpy.props.FloatVectorProperty(subtype='COLOR', default=[0.0,0.0,0.0])
+
+class ViewportPreset(ViewportPresetsOperator, bpy.types.PropertyGroup):
+    pass
 
 
 class ViewportPresetsAddonPreferences(AddonPreferences):
