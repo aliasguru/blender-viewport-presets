@@ -1,9 +1,11 @@
 import bpy
+from bpy.types import Operator
+from bl_operators.presets import AddPresetBase
 from . import viewport_presets_addonprefs
 
 
 
-class SavePreset(bpy.types.Operator):
+class SavePreset(Operator):
     bl_idname = "view3d.savepreset"
     bl_label = "Save preset"
 
@@ -40,6 +42,9 @@ class SavePreset(bpy.types.Operator):
 
 
         return {'FINISHED'}
+
+class VIEW3D_OT_Add_Viewport_Preset(Operator):
+    pass
 
 def register():
     bpy.utils.register_class(SavePreset)
