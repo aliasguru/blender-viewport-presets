@@ -49,7 +49,8 @@ def view3d_presets_draw(self, context):
 
     self.layout.popover(
         panel="VIEW3D_PT_presets",
-        text="Presets",
+        text="",
+        icon="PRESET"
     )
 
 def register():
