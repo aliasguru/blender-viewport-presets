@@ -16,12 +16,11 @@ bl_info = {
 if 'bpy' in locals():
     import importlib
 
-    if 'ViewportPresets' in locals():
-        importlib.reload(view3d_pt_presets)
-        importlib.reload(viewport_presets_addonprefs)
-        importlib.reload(view3d_applypreset)
-        importlib.reload(view3d_savepreset)
-        importlib.reload(view3d_deletepreset)
+    importlib.reload(view3d_pt_presets)
+    importlib.reload(viewport_presets_addonprefs)
+    importlib.reload(view3d_applypreset)
+    importlib.reload(view3d_savepreset)
+    importlib.reload(view3d_deletepreset)
 else:
     from . import view3d_pt_presets
     from . import viewport_presets_addonprefs
