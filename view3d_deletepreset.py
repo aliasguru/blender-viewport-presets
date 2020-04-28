@@ -18,10 +18,3 @@ class DeletePreset(bpy.types.Operator):
 
         return {'FINISHED'}
 
-
-def register():
-    bpy.utils.register_class(DeletePreset)
-
-
-def unregister():
-    bpy.utils.unregister_class(DeletePreset)

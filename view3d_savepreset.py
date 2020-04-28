@@ -38,10 +38,3 @@ class SavePreset(bpy.types.Operator):
 
         return {'FINISHED'}
 
-
-def register():
-    bpy.utils.register_class(SavePreset)
-
-
-def unregister():
-    bpy.utils.unregister_class(SavePreset)

@@ -37,10 +37,3 @@ class ApplyPreset(bpy.types.Operator):
 
         return {'FINISHED'}
 
-
-def register():
-    bpy.utils.register_class(ApplyPreset)
-
-
-def unregister():
-    bpy.utils.unregister_class(ApplyPreset)

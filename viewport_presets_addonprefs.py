@@ -89,15 +89,3 @@ class ViewportPresetsAddonPreferences(AddonPreferences):
 
         layout.prop(self, "presets")
 
-
-def register():
-    bpy.utils.register_class(ViewportPreset)
-    bpy.utils.register_class(ViewportPresetsAddonPreferences)
-
-    prefs = bpy.context.preferences.addons[__package__].preferences
-    prefs.selected_index = -1
-
-
-def unregister():
-    bpy.utils.unregister_class(ViewportPresetsAddonPreferences)
-    bpy.utils.unregister_class(ViewportPreset)

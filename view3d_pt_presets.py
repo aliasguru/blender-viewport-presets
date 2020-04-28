@@ -54,16 +54,3 @@ def view3d_presets_draw(self, context):
         icon = "PRESET"
     )
 
-
-def register():
-    bpy.utils.register_class(ViewportPresets)
-    bpy.types.VIEW3D_HT_header.append(view3d_presets_draw)
-
-
-def unregister():
-    bpy.utils.unregister_class(ViewportPresets)
-    bpy.types.VIEW3D_HT_header.remove(view3d_presets_draw)
-
-
-if __name__ == "__main__":
-    register()
