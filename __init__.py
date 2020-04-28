@@ -23,6 +23,9 @@ else:
 	from . import view3d_pt_presets, viewport_presets_addonprefs, view3d_applypreset, view3d_savepreset, view3d_deletepreset, serialize_json
 
 import bpy
+import logging
+
+logger = logging.getLogger(__package__)
 
 __classes__ = (
 	view3d_pt_presets.ViewportPresets,
@@ -42,6 +45,8 @@ def register():
 	prefs = bpy.context.preferences.addons[__package__].preferences
 	prefs.selected_index = -1
 	bpy.types.VIEW3D_HT_header.append(view3d_pt_presets.view3d_presets_draw)
+
+	logger.warning(list(serialize_json.get_presets()))
 
 
 def unregister():
