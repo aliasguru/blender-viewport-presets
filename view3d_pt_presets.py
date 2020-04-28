@@ -49,9 +49,9 @@ def view3d_presets_draw(self, context):
     layout = self.layout
 
     self.layout.popover(
-        panel="VIEW3D_PT_presets",
-        text="",
-        icon="PRESET"
+        panel = "VIEW3D_PT_presets",
+        text = "",
+        icon = "PRESET"
     )
 
 

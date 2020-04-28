@@ -2,12 +2,11 @@ import bpy
 from . import viewport_presets_addonprefs
 
 
-
 class DeletePreset(bpy.types.Operator):
     bl_idname = "view3d.deletepreset"
     bl_label = "Save preset"
 
-    index: bpy.props.IntProperty(default=-1)
+    index: bpy.props.IntProperty(default = -1)
 
     def execute(self, context):
         prefs = bpy.context.preferences.addons[__package__].preferences
@@ -19,8 +18,10 @@ class DeletePreset(bpy.types.Operator):
 
         return {'FINISHED'}
 
+
 def register():
     bpy.utils.register_class(DeletePreset)
+
 
 def unregister():
     bpy.utils.unregister_class(DeletePreset)
