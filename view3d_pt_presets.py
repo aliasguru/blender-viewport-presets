@@ -15,15 +15,15 @@ class ViewportPresets(bpy.types.Panel):
         scene = context.scene
         prefs = context.preferences.addons[__package__].preferences
 
-        layout.label(text="Presets")
+        layout.label(text = "Presets")
 
         row = layout.row()
-        col = row.column(align=True)
+        col = row.column(align = True)
 
         i = 0
-       
+
         for preset in prefs.presets:
-            op = col.operator('view3d.applypreset', text=preset.name, depress = (prefs.selected_index == i)  )
+            op = col.operator('view3d.applypreset', text = preset.name, depress = (prefs.selected_index == i))
             op.index = i
             params = op.preset.__annotations__.keys()
 
@@ -32,15 +32,16 @@ class ViewportPresets(bpy.types.Panel):
 
             i = i + 1
 
-        row.operator("view3d.savepreset", text="", icon='ADD', emboss=False)
+        _add = row.operator("view3d.savepreset", text = "", icon = 'ADD', emboss = False)
+        _add.index = -1
 
         if (prefs.selected_index >= 0):
-            layout.prop(prefs.presets[prefs.selected_index], "name", text="Rename")
+            layout.prop(prefs.presets[prefs.selected_index], "name", text = "Rename")
             row = layout.row()
-            row.operator('view3d.savepreset', text='Update').index = prefs.selected_index
-            row.operator('view3d.deletepreset', text='Delete').index = prefs.selected_index
+            row.operator('view3d.savepreset', text = 'Update').index = prefs.selected_index
+            row.operator('view3d.deletepreset', text = 'Delete').index = prefs.selected_index
 
-        row=layout.row()
+        row = layout.row()
         row.operator("wm.save_userpref")
 
 
@@ -48,9 +49,10 @@ def view3d_presets_draw(self, context):
     layout = self.layout
 
     self.layout.popover(
-        panel="VIEW3D_PT_presets",
-        text="Presets",
+        panel = "VIEW3D_PT_presets",
+        text = "Presets",
     )
+
 
 def register():
     bpy.utils.register_class(ViewportPresets)
